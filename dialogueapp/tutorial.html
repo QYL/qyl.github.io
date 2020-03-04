@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Swift, Objective-C, iOS, macOS, Python, Programming, 编程" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="简介欢迎使用对白。本文将简单介绍对白的使用方法。我们首先需要明确一点，对白是一款阅读器，本身并不自带内容。因此，我们必须把我们想要阅读的字幕文件(.ass 或 .srt)上传到对白应用内。 文件上传在上传文件之前，你的设备必须满足三个条件：(1) 你的手机和电脑连接了同一个 WiFi；(2) 你打开了对白的网络访问权限；（3）手机没有设置代理。关于第2点相信很多用户都注意到了，App 在启动时会询">
+<meta property="og:type" content="website">
+<meta property="og:title" content="使用教程">
+<meta property="og:url" content="http://ideaslab.cn/dialogueapp/tutorial.html">
+<meta property="og:site_name" content="樂·實驗室">
+<meta property="og:description" content="简介欢迎使用对白。本文将简单介绍对白的使用方法。我们首先需要明确一点，对白是一款阅读器，本身并不自带内容。因此，我们必须把我们想要阅读的字幕文件(.ass 或 .srt)上传到对白应用内。 文件上传在上传文件之前，你的设备必须满足三个条件：(1) 你的手机和电脑连接了同一个 WiFi；(2) 你打开了对白的网络访问权限；（3）手机没有设置代理。关于第2点相信很多用户都注意到了，App 在启动时会询">
+<meta property="article:published_time" content="2017-09-08T15:15:08.000Z">
+<meta property="article:modified_time" content="2020-03-04T13:00:18.171Z">
+<meta property="article:author" content="Yuanle Qiu">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"remove","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ideaslab.cn/dialogueapp/tutorial.html"/>
+
+
+
+
+
+  <title>使用教程 | 樂·實驗室</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">樂·實驗室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Le's Lab - a playground for ideas.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-creation">
+          <a href="/creation/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h2 class="post-title" itemprop="name headline">使用教程</h2>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>欢迎使用<strong>对白</strong>。本文将简单介绍<strong>对白</strong>的使用方法。我们首先需要明确一点，<strong>对白</strong>是一款阅读器，本身并不自带内容。因此，我们必须把我们想要阅读的字幕文件(.ass 或 .srt)上传到<strong>对白</strong>应用内。</p>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><p>在上传文件之前，你的设备必须满足三个条件：(1) 你的手机和电脑连接了同一个 WiFi；(2) 你打开了<strong>对白</strong>的网络访问权限；（3）手机没有设置代理。关于第2点相信很多用户都注意到了，App 在启动时会询问是否允许访问网络，这时需要点击允许。如果之前曾经点击了不允许，可以打开手机的设置（不是 App 内的设置）进行配置（路径：“设置” -&gt; “对白”），重新进行授权。</p>
+<p>在满足以上条件之后，便可以上传字幕文件了。此时点击 App 主界面右上角的 “+” 按钮，应用会弹出一个提示框，上面有上传页面的地址。如下图所示：</p>
+<center>![文件上传提示页面](/images/wifi_upload.png)</center> 
+
+<p>在电脑浏览器地址栏输入对应的地址（包括端口号），即可进入文件上传页面。在上传页面完成上传之后，关闭上传提示框，便可看到刚刚上传的文件出现在了文件列表中。</p>
+<h2 id="字幕解析"><a href="#字幕解析" class="headerlink" title="字幕解析"></a>字幕解析</h2><p>如果你直接用文本编辑软件打开<code>.ass</code>或者<code>.srt</code>字幕文件，就会发现里面除了字幕内容和时间轴，还有一大堆的编码，这些其实都是一些特效和样式。这些内容在视频中显示时可以让字幕更加美观，但是对于我们阅读的人而言则是噪音。<strong>对白</strong>会像变魔术般地将这些繁杂的内容全部过滤掉，只留下字幕的内容，并以中英对照(前提是你上传是的双语字幕)的方式呈现给用户。用户需要做的只有一步，即在文件列表中点击自己想要阅读的字幕文件，应用便会自动开始解析。需要注意的是，第一次解析可能需要耐心等待几秒的时间，之后打开则几乎无需等待。</p>
+</center> ![解析效果](/images/parser_intro.jpg)</center> 
+
+<h2 id="单词查询"><a href="#单词查询" class="headerlink" title="单词查询"></a>单词查询</h2><p>在阅读过程中，如果遇到不认识的单词长按即可查询定义。这一设计免去了用户阅读期间不断在不同应用之间跳转的烦恼，提升了阅读体验。另外，你还可以收藏生词，并且生词自带上下文。</p>
+<h2 id="自定义生词上下文"><a href="#自定义生词上下文" class="headerlink" title="自定义生词上下文"></a>自定义生词上下文</h2><p>在设置中开启上下文选择器之后，在添加生词时会弹出一个上下文选择器，你可以通过它选择单词所在的上下文，这样可以保证单词例句是一个完整的句子，而不是句子的一部分。</p>
+<h2 id="内容导出"><a href="#内容导出" class="headerlink" title="内容导出"></a>内容导出</h2><p>对白支持将字幕内容导出到 PDF 文件，而生词本则可以导出到 PDF 或者 CSV 文件。PDF 或者 CSV 文件可以直接在上传字幕的 Web 界面进行管理（下载、删除），也可以通过分享菜单拷贝、分享到其他 app 中使用。如需导出内容，只需在生词本或者字幕阅读页面点击右上角的分享按钮即可生成文件。你可以开启 Wi-Fi 传字幕的功能，然后在 Web 界面管理生成的文件，或者使用文件生成之后弹出的分享功能菜单，将文件分享、拷贝至其他应用。</p>
+<h2 id="文件同步"><a href="#文件同步" class="headerlink" title="文件同步"></a>文件同步</h2><p>对白支持 iCloud 同步字幕文件。现在只需在 Mac 上把字幕文件往 iCloud Drive 下的 Dialogue 目录一扔，文件就会自动同步到 iPhone 上。</p>
+<h2 id="外部导入"><a href="#外部导入" class="headerlink" title="外部导入"></a>外部导入</h2><p>在其它应用内点击字幕文件，选择在其他应用中打开，然后在弹出菜单中选择对白即可将字幕文件导入到<strong>对白</strong>。</p>
+<h2 id="快速滚动"><a href="#快速滚动" class="headerlink" title="快速滚动"></a>快速滚动</h2><p>阅读页面滚动时会出现一个圆形按钮，拖动即可快速滚动。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><strong>对白</strong>作为一款阅读工具，当然不能少了字典和夜间模式。在阅读时，长按即可选择需要查询的单词。在灯光较暗的环境中阅读时，可以到 App 设置页面打开夜间模式，以保护你的眼睛。</p>
+<p>如果你在使用过程中遇到了问题，或者有什么意见、建议，可以直接给我发邮件。我会尽快回复你。邮件地址：app#ideaslab.cn(发邮件时，请将#换成@)。</p>
+<p>感谢你的阅读。</p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanle Qiu</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      2.8k
+    </span>
+  
+</div>
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20093083-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

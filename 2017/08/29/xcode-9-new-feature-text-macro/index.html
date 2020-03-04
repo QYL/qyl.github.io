@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Xcode,iOS,macOS,Text Macro," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode 9 新功能之自定义文件模板">
+<meta property="og:url" content="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/index.html">
+<meta property="og:site_name" content="樂·實驗室">
+<meta property="og:description" content="我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。">
+<meta property="og:image" content="http://ideaslab.cn/images/text_macro_example.png">
+<meta property="article:published_time" content="2017-08-29T13:01:21.000Z">
+<meta property="article:modified_time" content="2020-03-04T13:00:18.167Z">
+<meta property="article:author" content="Yuanle Qiu">
+<meta property="article:tag" content="Xcode">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="Text Macro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ideaslab.cn/images/text_macro_example.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"remove","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/"/>
+
+
+
+
+
+  <title>Xcode 9 新功能之自定义文件模板 | 樂·實驗室</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">樂·實驗室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Le's Lab - a playground for ideas.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-creation">
+          <a href="/creation/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanle Qiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="樂·實驗室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Xcode 9 新功能之自定义文件模板</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T21:01:21+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Xcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Xcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  869
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。</p>
+<a id="more"></a>
+
+<h2 id="自定义文本宏"><a href="#自定义文本宏" class="headerlink" title="自定义文本宏"></a>自定义文本宏</h2><p>文本宏（Text Macro）是一种可以就地展开（expanded in-place）为特定文本的符号。在 Xcode 中新建文件时，新创建的文件的文件头就使用了文本宏。Xcode 自带了一些文本宏，我们不仅可以自定义这些自带的文本宏，还可以创建自己的文本宏。</p>
+<p>在自定义文本宏之前，我们需要准备两样东西：</p>
+<ul>
+<li>一个置于适当位置后的 IDETemplateMacros.plist 文件</li>
+<li>在 IDETemplateMacros.plist 文件中新增一项文本宏</li>
+</ul>
+<p>Xcode 在寻找一个文本宏的值时，会按顺序在以下几个路径中查找，并将使用第一个匹配成功的值。IDETemplateMacros.plist 文件放在不同路径，其作用域也是不一样的，具体如下：</p>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单个项目和用户</td>
+<td><ProjectName>.xcodeproj/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</td>
+</tr>
+<tr>
+<td>单个项目的所有用户</td>
+<td><ProjectName>.xcodeproj/xcshareddata/IDETemplateMacros.plist</td>
+</tr>
+<tr>
+<td>workspace中单个用户的所有项目</td>
+<td><WorkspaceName>.xcworkspace/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</td>
+</tr>
+<tr>
+<td>workspace中的所有项目和所有团队成员</td>
+<td><WorkspaceName>.xcworkspace/xcshareddata/IDETemplateMacros.plist</td>
+</tr>
+<tr>
+<td>你的所有项目</td>
+<td>~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist</td>
+</tr>
+</tbody></table>
+<p>若创建一个自定义的文本宏，可按下面的步骤进行：</p>
+<ol>
+<li><p>打开对应路径下的 IDETemplateMacros.plist 文件；</p>
+</li>
+<li><p>在顶层的字典（root）中新增一个键值对；</p>
+</li>
+<li><p>将该键值对的键设置为文本宏的名字；</p>
+</li>
+<li><p>将新增键值对的类型设置为字符串（String）</p>
+</li>
+<li><p>将键值对的值设置为你想要展开的文本</p>
+</li>
+</ol>
+<p>最后保存修改，一个文本宏就创建完成了。</p>
+<p>如果对应路径下没有 IDETemplateMacros.plist 文件，你可以自己新建一个。在 Xcode 菜单中选择 File &gt; New File，文件类型选择 Property List，并将其顶层数据项的类型设置为字典（Dictionary）。最后，将该文件命名为 IDETemplateMacros.plist 并保存在对应位置即可。</p>
+<h2 id="自定义文件头"><a href="#自定义文件头" class="headerlink" title="自定义文件头"></a>自定义文件头</h2><p>在 IDETemplateMacros.plist 中添加一个 FILEHEADER 文本宏即可对默认的文件头进行定制。具体而言，你需要在 IDETemplateMacros.plist 文件的顶层字典(Root)中新增一个键值对，键（key）为<strong>FILEHEADER</strong> 值为你的自定义内容，如下图所示：</p>
+<p><img src="/images/text_macro_example.png" alt="在Xcode的plist编辑器中编辑IDETemplateMacros.plist文件"></p>
+<p>在 Xcode 的 plist 编辑器中输入值时只能显示一行，如果你想对文本进行换行，可以使用 <code>Option + Return</code>键插入换行符。</p>
+<p>下面这段注释便是 Xcode 自动添加的文件头对应的文本宏：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  ___FILENAME___</span><br><span class="line">&#x2F;&#x2F;  ___PACKAGENAME___</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F;  Created by ___FULLUSERNAME___ on ___DATE___.</span><br><span class="line">&#x2F;&#x2F;  ___COPYRIGHT___</span><br><span class="line">&#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>上述文件头中使用的文本宏都是 Xcode 自带的。从这个例子中我们可以看出，文本宏中是可以引用其它文本宏的，引用时在文本宏的名字前后分别加三个下划(___)线即可。文本宏的详细格式可以参见<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9" target="_blank" rel="noopener">Text macro format reference</a>。</p>
+<h2 id="Xcode-自带的文本宏"><a href="#Xcode-自带的文本宏" class="headerlink" title="Xcode 自带的文本宏"></a>Xcode 自带的文本宏</h2><p>Xcode 自带了不少文本宏，我们可以直接使用，具体有哪些可以参见官方文档中的<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0" target="_blank" rel="noopener">Text macros reference</a>一节，这里就不再赘述。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 50px auto; width: 90%; text-align: center;">
+  <div>若我的文章对你有帮助，可以考虑请我喝杯咖啡</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Yuanle Qiu WeChat Pay"/>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Yuanle Qiu Alipay"/>
+      </div>
+    
+
+    
+    
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Yuanle Qiu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/" title="Xcode 9 新功能之自定义文件模板">http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Xcode/" rel="tag"># Xcode</a>
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/macOS/" rel="tag"># macOS</a>
+          
+            <a href="/tags/Text-Macro/" rel="tag"># Text Macro</a>
+          
+        </div>
+      
+
+      
+        <div>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-1779459878685761"
+     data-ad-slot="7007090585"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/22/understanding-machine-learning/" rel="next" title="什么是机器学习?">
+                <i class="fa fa-chevron-left"></i> 什么是机器学习?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanle Qiu</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">
+      2.8k
+    </span>
+  
+</div>
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20093083-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

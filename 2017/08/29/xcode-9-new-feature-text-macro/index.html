@@ -3,7 +3,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-Hans">
+<html class="theme-next mist" lang="zh-hk">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,15 +92,16 @@
 
 
 
-<meta name="description" content="我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。">
+<meta name="description" content="我們每次新建文件時，Xcode 都會自動在文件頭部添加一段注釋。有些人並不喜歡這段注釋，甚至有人每次新建完文件都會把文件頭部的注釋刪除了，然後自己重新寫一段。從 Xcode 9 開始，如果你不喜歡默認的注釋，你可以使用文本宏自定義一個自己喜歡的模板了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xcode 9 新功能之自定义文件模板">
+<meta property="og:title" content="Xcode 9 新功能之自定義文件模板">
 <meta property="og:url" content="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/index.html">
 <meta property="og:site_name" content="樂·實驗室">
-<meta property="og:description" content="我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。">
+<meta property="og:description" content="我們每次新建文件時，Xcode 都會自動在文件頭部添加一段注釋。有些人並不喜歡這段注釋，甚至有人每次新建完文件都會把文件頭部的注釋刪除了，然後自己重新寫一段。從 Xcode 9 開始，如果你不喜歡默認的注釋，你可以使用文本宏自定義一個自己喜歡的模板了。">
+<meta property="og:locale" content="zh_HK">
 <meta property="og:image" content="http://ideaslab.cn/images/text_macro_example.png">
 <meta property="article:published_time" content="2017-08-29T13:01:21.000Z">
-<meta property="article:modified_time" content="2020-03-04T13:00:18.167Z">
+<meta property="article:modified_time" content="2020-03-04T14:41:10.207Z">
 <meta property="article:author" content="Yuanle Qiu">
 <meta property="article:tag" content="Xcode">
 <meta property="article:tag" content="iOS">
@@ -143,7 +144,7 @@
 
 
 
-  <title>Xcode 9 新功能之自定义文件模板 | 樂·實驗室</title>
+  <title>Xcode 9 新功能之自定義文件模板 | 樂·實驗室</title>
   
 
 
@@ -155,7 +156,7 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hk">
 
   
   
@@ -203,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            首頁
           </a>
         </li>
       
@@ -213,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
             
-            作品
+            創造
           </a>
         </li>
       
@@ -223,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类
+            分類
           </a>
         </li>
       
@@ -233,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            關於
           </a>
         </li>
       
@@ -243,7 +244,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            歸檔
           </a>
         </li>
       
@@ -297,7 +298,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Xcode 9 新功能之自定义文件模板</h2>
+          <h2 class="post-title" itemprop="name headline">Xcode 9 新功能之自定義文件模板</h2>
         
 
         <div class="post-meta">
@@ -307,9 +308,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">發表於</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T21:01:21+08:00">
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-08-29T21:01:21+08:00">
                 2017-08-29
               </time>
             
@@ -328,7 +329,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">分類於</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -360,9 +361,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">字數統計&#58;</span>
                 
-                <span title="字数统计">
+                <span title="字數統計">
                   869
                 </span>
               
@@ -376,9 +377,9 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="閱讀時長">
                   3
                 </span>
               
@@ -400,67 +401,67 @@
       
 
       
-        <p>我们每次新建文件时，Xcode 都会自动在文件头部添加一段注释。有些人并不喜欢这段注释，甚至有人每次新建完文件都会把文件头部的注释删除了，然后自己重新写一段。从 Xcode 9 开始，如果你不喜欢默认的注释，你可以使用文本宏自定义一个自己喜欢的模板了。</p>
+        <p>我們每次新建文件時，Xcode 都會自動在文件頭部添加一段注釋。有些人並不喜歡這段注釋，甚至有人每次新建完文件都會把文件頭部的注釋刪除了，然後自己重新寫一段。從 Xcode 9 開始，如果你不喜歡默認的注釋，你可以使用文本宏自定義一個自己喜歡的模板了。</p>
 <a id="more"></a>
 
-<h2 id="自定义文本宏"><a href="#自定义文本宏" class="headerlink" title="自定义文本宏"></a>自定义文本宏</h2><p>文本宏（Text Macro）是一种可以就地展开（expanded in-place）为特定文本的符号。在 Xcode 中新建文件时，新创建的文件的文件头就使用了文本宏。Xcode 自带了一些文本宏，我们不仅可以自定义这些自带的文本宏，还可以创建自己的文本宏。</p>
-<p>在自定义文本宏之前，我们需要准备两样东西：</p>
+<h2 id="自定義文本宏"><a href="#自定義文本宏" class="headerlink" title="自定義文本宏"></a>自定義文本宏</h2><p>文本宏（Text Macro）是一種可以就地展開（expanded in-place）為特定文本的符號。在 Xcode 中新建文件時，新創建的文件的文件頭就使用了文本宏。Xcode 自帶了一些文本宏，我們不僅可以自定義這些自帶的文本宏，還可以創建自己的文本宏。</p>
+<p>在自定義文本宏之前，我們需要准備兩樣東西：</p>
 <ul>
-<li>一个置于适当位置后的 IDETemplateMacros.plist 文件</li>
-<li>在 IDETemplateMacros.plist 文件中新增一项文本宏</li>
+<li>一個置於適當位置後的 IDETemplateMacros.plist 文件</li>
+<li>在 IDETemplateMacros.plist 文件中新增一項文本宏</li>
 </ul>
-<p>Xcode 在寻找一个文本宏的值时，会按顺序在以下几个路径中查找，并将使用第一个匹配成功的值。IDETemplateMacros.plist 文件放在不同路径，其作用域也是不一样的，具体如下：</p>
+<p>Xcode 在尋找一個文本宏的值時，會按順序在以下幾個路徑中查找，並將使用第一個匹配成功的值。IDETemplateMacros.plist 文件放在不同路徑，其作用域也是不一樣的，具體如下：</p>
 <table>
 <thead>
 <tr>
 <th>作用域</th>
-<th>路径</th>
+<th>路徑</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>单个项目和用户</td>
+<td>單個項目和用戶</td>
 <td><ProjectName>.xcodeproj/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</td>
 </tr>
 <tr>
-<td>单个项目的所有用户</td>
+<td>單個項目的所有用戶</td>
 <td><ProjectName>.xcodeproj/xcshareddata/IDETemplateMacros.plist</td>
 </tr>
 <tr>
-<td>workspace中单个用户的所有项目</td>
+<td>workspace中單個用戶的所有項目</td>
 <td><WorkspaceName>.xcworkspace/xcuserdata/[username].xcuserdatad/IDETemplateMacros.plist</td>
 </tr>
 <tr>
-<td>workspace中的所有项目和所有团队成员</td>
+<td>workspace中的所有項目和所有團隊成員</td>
 <td><WorkspaceName>.xcworkspace/xcshareddata/IDETemplateMacros.plist</td>
 </tr>
 <tr>
-<td>你的所有项目</td>
+<td>你的所有項目</td>
 <td>~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist</td>
 </tr>
 </tbody></table>
-<p>若创建一个自定义的文本宏，可按下面的步骤进行：</p>
+<p>若創建一個自定義的文本宏，可按下面的步驟進行：</p>
 <ol>
-<li><p>打开对应路径下的 IDETemplateMacros.plist 文件；</p>
+<li><p>打開對應路徑下的 IDETemplateMacros.plist 文件；</p>
 </li>
-<li><p>在顶层的字典（root）中新增一个键值对；</p>
+<li><p>在頂層的字典（root）中新增一個鍵值對；</p>
 </li>
-<li><p>将该键值对的键设置为文本宏的名字；</p>
+<li><p>將該鍵值對的鍵設置為文本宏的名字；</p>
 </li>
-<li><p>将新增键值对的类型设置为字符串（String）</p>
+<li><p>將新增鍵值對的類型設置為字符串（String）</p>
 </li>
-<li><p>将键值对的值设置为你想要展开的文本</p>
+<li><p>將鍵值對的值設置為你想要展開的文本</p>
 </li>
 </ol>
-<p>最后保存修改，一个文本宏就创建完成了。</p>
-<p>如果对应路径下没有 IDETemplateMacros.plist 文件，你可以自己新建一个。在 Xcode 菜单中选择 File &gt; New File，文件类型选择 Property List，并将其顶层数据项的类型设置为字典（Dictionary）。最后，将该文件命名为 IDETemplateMacros.plist 并保存在对应位置即可。</p>
-<h2 id="自定义文件头"><a href="#自定义文件头" class="headerlink" title="自定义文件头"></a>自定义文件头</h2><p>在 IDETemplateMacros.plist 中添加一个 FILEHEADER 文本宏即可对默认的文件头进行定制。具体而言，你需要在 IDETemplateMacros.plist 文件的顶层字典(Root)中新增一个键值对，键（key）为<strong>FILEHEADER</strong> 值为你的自定义内容，如下图所示：</p>
-<p><img src="/images/text_macro_example.png" alt="在Xcode的plist编辑器中编辑IDETemplateMacros.plist文件"></p>
-<p>在 Xcode 的 plist 编辑器中输入值时只能显示一行，如果你想对文本进行换行，可以使用 <code>Option + Return</code>键插入换行符。</p>
-<p>下面这段注释便是 Xcode 自动添加的文件头对应的文本宏：</p>
+<p>最後保存修改，一個文本宏就創建完成了。</p>
+<p>如果對應路徑下沒有 IDETemplateMacros.plist 文件，你可以自己新建一個。在 Xcode 菜單中選擇 File &gt; New File，文件類型選擇 Property List，並將其頂層數據項的類型設置為字典（Dictionary）。最後，將該文件命名為 IDETemplateMacros.plist 並保存在對應位置即可。</p>
+<h2 id="自定義文件頭"><a href="#自定義文件頭" class="headerlink" title="自定義文件頭"></a>自定義文件頭</h2><p>在 IDETemplateMacros.plist 中添加一個 FILEHEADER 文本宏即可對默認的文件頭進行定制。具體而言，你需要在 IDETemplateMacros.plist 文件的頂層字典(Root)中新增一個鍵值對，鍵（key）為<strong>FILEHEADER</strong> 值為你的自定義內容，如下圖所示：</p>
+<p><img src="/images/text_macro_example.png" alt="在Xcode的plist編輯器中編輯IDETemplateMacros.plist文件"></p>
+<p>在 Xcode 的 plist 編輯器中輸入值時只能顯示一行，如果你想對文本進行換行，可以使用 <code>Option + Return</code>鍵插入換行符。</p>
+<p>下面這段注釋便是 Xcode 自動添加的文件頭對應的文本宏：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;  ___FILENAME___</span><br><span class="line">&#x2F;&#x2F;  ___PACKAGENAME___</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F;  Created by ___FULLUSERNAME___ on ___DATE___.</span><br><span class="line">&#x2F;&#x2F;  ___COPYRIGHT___</span><br><span class="line">&#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>上述文件头中使用的文本宏都是 Xcode 自带的。从这个例子中我们可以看出，文本宏中是可以引用其它文本宏的，引用时在文本宏的名字前后分别加三个下划(___)线即可。文本宏的详细格式可以参见<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9" target="_blank" rel="noopener">Text macro format reference</a>。</p>
-<h2 id="Xcode-自带的文本宏"><a href="#Xcode-自带的文本宏" class="headerlink" title="Xcode 自带的文本宏"></a>Xcode 自带的文本宏</h2><p>Xcode 自带了不少文本宏，我们可以直接使用，具体有哪些可以参见官方文档中的<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0" target="_blank" rel="noopener">Text macros reference</a>一节，这里就不再赘述。</p>
+<p>上述文件頭中使用的文本宏都是 Xcode 自帶的。從這個例子中我們可以看出，文本宏中是可以引用其它文本宏的，引用時在文本宏的名字前後分別加三個下劃(___)線即可。文本宏的詳細格式可以參見<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devc8a500cb9" target="_blank" rel="noopener">Text macro format reference</a>。</p>
+<h2 id="Xcode-自帶的文本宏"><a href="#Xcode-自帶的文本宏" class="headerlink" title="Xcode 自帶的文本宏"></a>Xcode 自帶的文本宏</h2><p>Xcode 自帶了不少文本宏，我們可以直接使用，具體有哪些可以參見官方文檔中的<a href="https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/dev7fe737ce0" target="_blank" rel="noopener">Text macros reference</a>一節，這裡就不再贅述。</p>
 
       
     </div>
@@ -469,50 +470,19 @@
     
 
     
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 50px auto; width: 90%; text-align: center;">
-  <div>若我的文章对你有帮助，可以考虑请我喝杯咖啡</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>赞赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="Yuanle Qiu WeChat Pay"/>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="Yuanle Qiu Alipay"/>
-      </div>
-    
-
-    
-    
-  </div>
-</div>
-
-      </div>
-    
-
-    
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者：</strong>
+    <strong>Post author：</strong>
     Yuanle Qiu
   </li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/" title="Xcode 9 新功能之自定义文件模板">http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/</a>
+    <strong>Post link：</strong>
+    <a href="http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/" title="Xcode 9 新功能之自定義文件模板">http://ideaslab.cn/2017/08/29/xcode-9-new-feature-text-macro/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
   </li>
 </ul>
 
@@ -535,20 +505,6 @@
       
 
       
-        <div>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-format="fluid"
-     data-ad-layout="in-article"
-     data-ad-client="ca-pub-1779459878685761"
-     data-ad-slot="7007090585"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-        </div>
-      
 
       
       
@@ -558,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/22/understanding-machine-learning/" rel="next" title="什么是机器学习?">
-                <i class="fa fa-chevron-left"></i> 什么是机器学习?
+              <a href="/2017/08/22/understanding-machine-learning/" rel="next" title="什麼是機器學習?">
+                <i class="fa fa-chevron-left"></i> 什麼是機器學習?
               </a>
             
           </div>

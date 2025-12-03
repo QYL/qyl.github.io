@@ -17,16 +17,40 @@
         }
 
         :root {
-            --primary-green: #6B9080;
-            --light-green: #A4C3B2;
+            /* Primary green - more vibrant */
+            --primary-green: #4A9D7E;
+            --light-green: #7BC5A8;
+            --dark-green: #2E7D63;
+            
+            /* New accent colors */
+            --coral: #FF6B6B;
+            --peach: #FFB088;
+            --lavender: #B4A7D6;
+            --purple: #9381C2;
+            --amber: #FFD166;
+            --gold: #F0AD4E;
+            --soft-blue: #6EAFDC;
+            --trust-blue: #5A9FCC;
+            
+            /* Neutral colors */
             --cream: #F6F4EF;
             --warm-gray: #CCB9A6;
             --dark-text: #2C3E50;
             --light-text: #5A6C7D;
             --white: #FFFFFF;
+            
+            /* Legacy accent */
             --accent-teal: #4A8E8B;
-            --gradient-start: #8BA888;
-            --gradient-end: #6B9080;
+            
+            /* Gradients */
+            --gradient-green-start: #7BC5A8;
+            --gradient-green-end: #4A9D7E;
+            --gradient-coral-start: #FFB088;
+            --gradient-coral-end: #FF6B6B;
+            --gradient-purple-start: #B4A7D6;
+            --gradient-purple-end: #9381C2;
+            --gradient-blue-start: #6EAFDC;
+            --gradient-blue-end: #5A9FCC;
         }
 
         html {
@@ -48,7 +72,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            background: linear-gradient(135deg, var(--gradient-green-start) 0%, var(--gradient-green-end) 100%);
             color: var(--white);
             padding: 100px 20px 80px;
             text-align: center;
@@ -80,10 +104,16 @@
         }
 
         .hero-emoji {
-            font-size: 4rem;
             display: block;
             margin-bottom: 20px;
             animation: fadeIn 1s ease;
+        }
+        
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
         }
 
         .hero-tagline {
@@ -96,26 +126,30 @@
 
         .cta-button {
             display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-green);
+            background: linear-gradient(135deg, var(--gradient-coral-start) 0%, var(--gradient-coral-end) 100%);
+            color: var(--white);
             padding: 16px 40px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
             animation: fadeInUp 0.8s ease 0.4s backwards;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
 
-        .cta-button::before {
-            content: "📱 ";
-            font-size: 1.2rem;
+        .cta-button svg {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+            margin-top: -2px;
         }
 
         /* Section Styles */
@@ -171,11 +205,97 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             border-color: var(--light-green);
         }
+        
+        /* Individual pillar card colors */
+        .pillar-card:nth-child(1) {
+            border-color: var(--amber);
+        }
+        .pillar-card:nth-child(1):hover {
+            border-color: var(--gold);
+        }
+        .pillar-card:nth-child(1) .pillar-icon svg {
+            color: var(--amber);
+        }
+        
+        .pillar-card:nth-child(2) {
+            border-color: var(--coral);
+        }
+        .pillar-card:nth-child(2):hover {
+            border-color: var(--peach);
+        }
+        .pillar-card:nth-child(2) .pillar-icon svg {
+            color: var(--coral);
+        }
+        
+        .pillar-card:nth-child(3) {
+            border-color: var(--lavender);
+        }
+        .pillar-card:nth-child(3):hover {
+            border-color: var(--purple);
+        }
+        .pillar-card:nth-child(3) .pillar-icon svg {
+            color: var(--lavender);
+        }
+        
+        .pillar-card:nth-child(4) {
+            border-color: var(--coral);
+        }
+        .pillar-card:nth-child(4):hover {
+            border-color: var(--coral);
+        }
+        .pillar-card:nth-child(4) .pillar-icon svg {
+            color: var(--coral);
+        }
+        
+        .pillar-card:nth-child(5) {
+            border-color: var(--soft-blue);
+        }
+        .pillar-card:nth-child(5):hover {
+            border-color: var(--trust-blue);
+        }
+        .pillar-card:nth-child(5) .pillar-icon svg {
+            color: var(--soft-blue);
+        }
+        
+        .pillar-card:nth-child(6) {
+            border-color: var(--amber);
+        }
+        .pillar-card:nth-child(6):hover {
+            border-color: var(--gold);
+        }
+        .pillar-card:nth-child(6) .pillar-icon svg {
+            color: var(--gold);
+        }
+        
+        .pillar-card:nth-child(7) {
+            border-color: var(--purple);
+        }
+        .pillar-card:nth-child(7):hover {
+            border-color: var(--lavender);
+        }
+        .pillar-card:nth-child(7) .pillar-icon svg {
+            color: var(--purple);
+        }
+        
+        .pillar-card:nth-child(8) {
+            border-color: var(--primary-green);
+        }
+        .pillar-card:nth-child(8):hover {
+            border-color: var(--light-green);
+        }
+        .pillar-card:nth-child(8) .pillar-icon svg {
+            color: var(--primary-green);
+        }
 
         .pillar-icon {
-            font-size: 3rem;
+            display: flex;
+            justify-content: center;
             margin-bottom: 15px;
-            display: block;
+        }
+        
+        .pillar-icon svg {
+            width: 48px;
+            height: 48px;
         }
 
         .pillar-card h3 {
@@ -219,7 +339,7 @@
             display: inline-block;
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-end));
             color: var(--white);
             border-radius: 50%;
             text-align: center;
@@ -292,9 +412,16 @@
         }
 
         .flow-icon {
-            font-size: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-width: 80px;
             text-align: center;
+        }
+        
+        .flow-icon svg {
+            width: 64px;
+            height: 64px;
         }
 
         .flow-content h3 {
@@ -341,9 +468,14 @@
         }
 
         .privacy-icon {
-            font-size: 3.5rem;
+            display: flex;
+            justify-content: center;
             margin-bottom: 20px;
-            display: block;
+        }
+        
+        .privacy-icon svg {
+            width: 56px;
+            height: 56px;
         }
 
         .privacy-item h3 {
@@ -366,7 +498,7 @@
         }
 
         .tech-badge {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-end));
             color: var(--white);
             padding: 25px;
             border-radius: 12px;
@@ -388,6 +520,19 @@
             opacity: 0.9;
         }
 
+        /* Section background variations */
+        section:nth-child(3) {
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(180, 167, 214, 0.05) 100%);
+        }
+        
+        section:nth-child(4) {
+            background: linear-gradient(180deg, var(--white) 0%, rgba(110, 175, 220, 0.05) 100%);
+        }
+        
+        section:nth-child(5) {
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(255, 176, 136, 0.05) 100%);
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark-text);
@@ -492,8 +637,9 @@
                 font-size: 2rem;
             }
 
-            .hero-emoji {
-                font-size: 3rem;
+            .hero-icon {
+                width: 60px;
+                height: 60px;
             }
 
             section {
@@ -516,11 +662,18 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-emoji">🌱</span>
+            <svg class="hero-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Sparkles icon representing growth and intentional living">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
             <h1>Selflog</h1>
             <p class="hero-tagline">Turning 40 questions into a year of intentional living.</p>
             <!-- TODO: Replace # with actual App Store URL when app is published -->
-            <a href="#" class="cta-button">Download on App Store</a>
+            <a href="#" class="cta-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
+                Download on App Store
+            </a>
         </div>
     </section>
 
@@ -543,42 +696,74 @@
             </div>
             <div class="pillars-grid">
                 <div class="pillar-card">
-                    <span class="pillar-icon">📈</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Growth icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
                     <h3>Growth & Achievement</h3>
                     <p>Track your learning journey, celebrate wins, and develop new skills that propel you forward.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">🤝</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Relationships icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
                     <h3>Relationships & Connections</h3>
                     <p>Nurture meaningful bonds, celebrate special people, and strengthen your connections.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">✨</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Joy icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
                     <h3>Joy & Discovery</h3>
                     <p>Capture moments of excitement, explore your favorites, and cultivate curiosity.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">💪</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Health icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
                     <h3>Health & Resilience</h3>
                     <p>Build physical fitness, overcome challenges, and strengthen mental fortitude.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">🌍</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Adventure icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
                     <h3>Adventure & Exploration</h3>
                     <p>Document travels, embrace new experiences, and expand your horizons.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">💰</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Wealth icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
                     <h3>Wealth & Habits</h3>
                     <p>Manage finances wisely, develop positive habits, and maintain daily disciplines.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">🪞</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Reflection icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
                     <h3>Reflection & Regret</h3>
                     <p>Learn from experiences, acknowledge wishes, and identify growth opportunities.</p>
                 </div>
                 <div class="pillar-card">
-                    <span class="pillar-icon">🌱</span>
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Legacy icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
                     <h3>Legacy & Sanity</h3>
                     <p>Define your values, discover meaning, and maintain what keeps you centered.</p>
                 </div>
@@ -652,7 +837,11 @@
             </div>
             <div class="flow-container">
                 <div class="flow-step">
-                    <div class="flow-icon">📝</div>
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Writing icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
                     <div class="flow-content">
                         <h3>Daily Flow</h3>
                         <p>Each day, receive one thoughtful prompt from the 40-question framework. Spend 2-5 minutes capturing your thoughts through text, voice, photos, or videos. The app intelligently organizes your entries across the 8 Life Pillars, building a rich tapestry of your daily experiences.</p>
@@ -660,7 +849,11 @@
                 </div>
                 <div class="flow-arrow">↓</div>
                 <div class="flow-step">
-                    <div class="flow-icon">📊</div>
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Analytics icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
                     <div class="flow-content">
                         <h3>Weekly Flow</h3>
                         <p>Every week, engage with 4-6 targeted reflection questions. Our AI analyzes your daily logs to pre-fill drafts, making reflection effortless. Track your life scores across all pillars and spot trends in your personal growth journey.</p>
@@ -668,7 +861,11 @@
                 </div>
                 <div class="flow-arrow">↓</div>
                 <div class="flow-step">
-                    <div class="flow-icon">📚</div>
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Book icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
                     <div class="flow-content">
                         <h3>Yearly Flow</h3>
                         <p>At year's end, all your reflections compile into a beautiful, interactive e-book. All 40 questions are answered with your authentic voice, enriched with photos and memories. Set unlock dates for future reflection, share with a partner, or export for safekeeping.</p>
@@ -687,22 +884,38 @@
             </div>
             <div class="privacy-features">
                 <div class="privacy-item">
-                    <span class="privacy-icon">🔒</span>
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Lock icon for security">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
                     <h3>On-Device AI</h3>
                     <p>Uses Apple's Foundation Models for NLP—no data sent to cloud servers</p>
                 </div>
                 <div class="privacy-item">
-                    <span class="privacy-icon">💾</span>
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Database icon for local storage">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                    </div>
                     <h3>Local Storage</h3>
                     <p>All data stored locally in SQLite via SwiftData on your device</p>
                 </div>
                 <div class="privacy-item">
-                    <span class="privacy-icon">🚫</span>
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="No tracking icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                        </svg>
+                    </div>
                     <h3>No Tracking</h3>
                     <p>No ads, no tracking, no third-party analytics. Your data is yours.</p>
                 </div>
                 <div class="privacy-item">
-                    <span class="privacy-icon">☁️</span>
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Cloud icon for iCloud backup">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
                     <h3>Optional iCloud</h3>
                     <p>Choose to backup to your personal iCloud—under your control</p>
                 </div>
@@ -737,7 +950,7 @@
             <p>Have questions or feedback?</p>
             <p><a href="mailto:support@selflog.app">support@selflog.app</a></p>
             <div class="copyright">
-                <p>&copy; 2024 Selflog. All rights reserved.</p>
+                <p>&copy; 2025 Selflog. All rights reserved.</p>
             </div>
         </div>
     </footer>

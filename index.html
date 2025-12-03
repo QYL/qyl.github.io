@@ -1,826 +1,919 @@
 <!DOCTYPE html>
-
-
-
-
-<html class="theme-next mist" lang="zh-hk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selflog - Turning 40 questions into a year of intentional living. Transform your daily reflections into meaningful personal growth with our privacy-first iOS app.">
+    <meta name="keywords" content="iOS, journaling, reflection, personal growth, privacy, year in review, intentional living">
+    <meta property="og:title" content="Selflog - Intentional Living Through Reflection">
+    <meta property="og:description" content="Turn 40 year-in-review questions into daily intentional living with 8 Life Pillars, AI-powered insights, and complete privacy.">
+    <meta property="og:type" content="website">
+    <title>Selflog - Turning 40 questions into a year of intentional living</title>
     
-    
-  
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
-  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  
+        :root {
+            /* Primary Palette */
+            --primary-indigo: #4F46E5;
+            --primary-light: #818CF8;
+            --primary-dark: #3730A3;
+            
+            /* Accents */
+            --accent-coral: #FF6B9D;
+            --accent-peach: #FF9F43;
+            --accent-cyan: #06B6D4;
+            --accent-violet: #8B5CF6;
+            --accent-teal: #14B8A6;
+            
+            /* Neutrals */
+            --bg-body: #FAFAFA;
+            --bg-white: #FFFFFF;
+            --bg-surface: #FFFFFF;
+            
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --text-light: #94A3B8;
+            
+            /* Gradients */
+            --grad-hero: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            --grad-card: linear-gradient(145deg, #ffffff, #f8fafc);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
 
-  
+        html {
+            scroll-behavior: smooth;
+        }
 
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Swift, Objective-C, iOS, macOS, Python, Programming, 编程" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="樂·實驗室">
-<meta property="og:url" content="http://qyl.github.io/index.html">
-<meta property="og:site_name" content="樂·實驗室">
-<meta property="og:locale" content="zh_HK">
-<meta property="article:author" content="Yuanle Qiu">
-<meta name="twitter:card" content="summary">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"remove","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: false,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://qyl.github.io/"/>
-
-
-
-
-
-  <title>樂·實驗室</title>
-  
-
-
-
-
-
-
-
-
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hk">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">樂·實驗室</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description">Le's Lab - a playground for ideas.</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首頁
-          </a>
-        </li>
-      
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.025em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--grad-hero);
+            background-size: 200% 200%;
+            color: var(--bg-white);
+            padding: 140px 20px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%);
+            pointer-events: none;
+        }
         
-        <li class="menu-item menu-item-creation">
-          <a href="/creation/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
-            
-            創造
-          </a>
-        </li>
-      
+        /* Decorative blur blobs in hero */
+        .blob {
+            position: absolute;
+            filter: blur(50px);
+            z-index: 0;
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out;
+        }
+        .blob-1 {
+            width: 300px; height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            top: -100px; left: -50px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .blob-2 {
+            width: 250px; height: 250px;
+            background: rgba(255, 255, 255, 0.15);
+            bottom: -50px; right: -50px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation-delay: -2s;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease;
+        }
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分類
-          </a>
-        </li>
-      
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+            animation: floatIcon 6s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 48px;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--bg-white);
+            color: var(--primary-indigo);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-white);
+        }
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            關於
-          </a>
-        </li>
-      
+        section:nth-child(odd):not(.hero) {
+            background-color: #F8FAFC;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            歸檔
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qyl.github.io/2017/08/29/xcode-9-new-feature-text-macro/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yuanle Qiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="樂·實驗室">
-    </span>
-
-    
-      <header class="post-header">
-
+        .section-header h2 span {
+            color: var(--primary-indigo);
+            position: relative;
+            display: inline-block;
+        }
         
+        .section-header h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(99, 102, 241, 0.2);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .pillar-card {
+            background: var(--bg-white);
+            padding: 36px 30px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0.5));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/29/xcode-9-new-feature-text-macro/" itemprop="url">Xcode 9 新功能之自定義文件模板</a></h2>
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Pillar Colors and Hover States */
+        .pillar-card:hover h3 { color: var(--primary-indigo); }
+
+        .pillar-icon {
+            display: inline-flex;
+            padding: 12px;
+            border-radius: 16px;
+            background: #EEF2FF;
+            color: var(--primary-indigo);
+            margin-bottom: 24px;
+            transition: transform 0.3s ease;
+        }
         
+        .pillar-card:hover .pillar-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-08-29T21:01:21+08:00">
-                2017-08-29
-              </time>
-            
+        .pillar-icon svg {
+            width: 32px;
+            height: 32px;
+        }
 
-            
+        /* Custom colors for specific pillars can be added here if desired, 
+           or keep a unified cleaner look which is more modern */
 
-            
-          </span>
+        .pillar-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Xcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Xcode</span>
-                  </a>
-                </span>
+        .pillar-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
-                
-                
-              
-            </span>
-          
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
 
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字數統計&#58;</span>
-                
-                <span title="字數統計">
-                  869
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
-                
-                <span title="閱讀時長">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        .feature-card {
+            background: var(--bg-white);
+            padding: 48px 40px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            overflow: hidden;
+            position: relative;
+        }
         
-          <p>我們每次新建文件時，Xcode 都會自動在文件頭部添加一段注釋。有些人並不喜歡這段注釋，甚至有人每次新建完文件都會把文件頭部的注釋刪除了，然後自己重新寫一段。從 Xcode 9 開始，如果你不喜歡默認的注釋，你可以使用文本宏自定義一個自己喜歡的模板了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/29/xcode-9-new-feature-text-macro/" rel="contents">
-              閱讀全文 &raquo;
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: linear-gradient(135deg, transparent 50%, rgba(99, 102, 241, 0.03) 100%);
+            border-radius: 0 32px 0 50%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background: var(--bg-white);
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 10px rgba(6, 182, 212, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 1.75rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            color: var(--text-main);
+            padding: 10px 0;
+            padding-left: 32px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .feature-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 18px;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2306B6D4' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7' /%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* How It Works Flow */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Connecting line */
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            bottom: 40px;
+            left: 50px;
+            width: 2px;
+            background: #E2E8F0;
+            z-index: 0;
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 32px;
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            z-index: 1;
+            align-items: flex-start;
+        }
+        
+        .flow-step:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .flow-icon {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            background: #FAF5FF;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-violet);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .flow-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .flow-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .flow-content p {
+            color: var(--text-muted);
+        }
+        
+        /* Hiding the old arrows */
+        .flow-arrow { display: none; }
+
+        /* Privacy Section */
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .privacy-item {
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--bg-white);
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid #F1F5F9;
+        }
+
+        .privacy-item:hover {
+            background: #F8FAFC;
+            border-color: #E2E8F0;
+            transform: translateY(-4px);
+        }
+
+        .privacy-icon {
+            display: inline-flex;
+            padding: 16px;
+            border-radius: 50%;
+            background: #EEF2FF;
+            color: var(--primary-indigo);
+            margin-bottom: 20px;
+        }
+        
+        .privacy-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .privacy-item h3 {
+            font-size: 1.125rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tech-badge {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            border-color: var(--primary-indigo);
+            background: #EEF2FF;
+        }
+
+        .tech-badge h4 {
+            font-size: 1.25rem;
+            color: var(--primary-indigo);
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .tech-badge p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #0F172A;
+            color: var(--bg-white);
+            padding: 80px 20px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+
+        footer h3 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #fff, #94A3B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer p {
+            color: #94A3B8;
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        footer a:hover { color: var(--bg-white); }
+
+        .footer-divider {
+            width: 40px;
+            height: 4px;
+            background: #334155;
+            margin: 40px auto;
+            border-radius: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-tagline { font-size: 1.125rem; }
+            .section-header h2 { font-size: 2rem; }
+            .flow-container::before { display: none; }
+            .flow-step { flex-direction: column; align-items: center; text-align: center; }
+            .flow-step:hover { transform: translateY(-5px); }
+            .tech-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="hero-content">
+            <svg class="hero-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            <h1>Selflog</h1>
+            <p class="hero-tagline">Turning 40 questions into a year of intentional living. Transform your daily reflections into meaningful personal growth.</p>
+            <a href="#" class="cta-button">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.3-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.71-3.06 1.48-.68.7-1.26 1.83-1.1 2.91 1.19.09 2.4-.6 3.09-1.28z"/>
+                </svg>
+                Download on App Store
             </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
+        </div>
+    </section>
 
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qyl.github.io/2017/08/22/understanding-machine-learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yuanle Qiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="樂·實驗室">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/22/understanding-machine-learning/" itemprop="url">什麼是機器學習?</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-08-22T23:56:00+08:00">
-                2017-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字數統計&#58;</span>
-                
-                <span title="字數統計">
-                  1,938
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">閱讀時長 &asymp;</span>
-                
-                <span title="閱讀時長">
-                  7
-                </span>
-              
+    <!-- About Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Transform Your Year<br><span>One Day at a Time</span></h2>
+                <p>Selflog is a transformative iOS app that merges the power of a 40-question year-in-review framework with daily intentional living, memory preservation, and personal growth.</p>
             </div>
-          
-
-          
-
         </div>
-      </header>
-    
+    </section>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>機器學習無疑是當下最熱門的技術之一，在不經意之間我們已經享受了機器學習技術帶來的便利。微信基於語音識別技術的語音轉文字功能，豆瓣 FM 的智能音樂推薦等都是機器學習的實際應用。本文將對機器學習做一個簡單的介紹，涉及的話題包括基本概念和術語的介紹，以及機器學習的大致過程。希望讀完本文你能對機器學習有一個更加具體的認識。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/22/understanding-machine-learning/" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
+    <!-- 8 Life Pillars Section -->
+    <section id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <h2>The 8 Life <span>Pillars</span></h2>
+                <p>Every aspect of your life, organized into meaningful categories for holistic growth.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #FF9F43; background: #FFF5EB;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3>Growth & Achievement</h3>
+                    <p>Track your learning journey, celebrate wins, and develop new skills that propel you forward.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #FF6B9D; background: #FFF0F5;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20H7m6-8a3 3 0 100-6 3 3 0 000 6z"></path>
+                        </svg>
+                    </div>
+                    <h3>Relationships & Connections</h3>
+                    <p>Nurture meaningful bonds, celebrate special people, and strengthen your connections.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #8B5CF6; background: #F3F0FF;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3>Joy & Discovery</h3>
+                    <p>Capture moments of excitement, explore your favorites, and cultivate curiosity.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #14B8A6; background: #E6FFFA;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Health & Resilience</h3>
+                    <p>Build physical fitness, overcome challenges, and strengthen mental fortitude.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #06B6D4; background: #ECFEFF;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
+                        </svg>
+                    </div>
+                    <h3>Adventure & Exploration</h3>
+                    <p>Document travels, embrace new experiences, and expand your horizons.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #F59E0B; background: #FFFBEB;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Wealth & Habits</h3>
+                    <p>Manage finances wisely, develop positive habits, and maintain daily disciplines.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #6366F1; background: #EEF2FF;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3>Reflection & Regret</h3>
+                    <p>Learn from experiences, acknowledge wishes, and identify growth opportunities.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon" style="color: #4F46E5; background: #E0E7FF;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3>Legacy & Sanity</h3>
+                    <p>Define your values, discover meaning, and maintain what keeps you centered.</p>
+                </div>
+            </div>
         </div>
-        
-      </div>
-    </main>
+    </section>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yuanle Qiu</span>
+    <!-- Key Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need for<br><span>Intentional Living</span></h2>
+                <p>A comprehensive toolkit for meaningful reflection and growth.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3>Daily Micro-Logs</h3>
+                    <p>One rotating prompt per day from 40 carefully crafted questions.</p>
+                    <ul class="feature-list">
+                        <li>Multi-modal input: text, voice, photos, videos</li>
+                        <li>AI auto-tagging for easy organization</li>
+                        <li>Apple Watch support for on-the-go logging</li>
+                        <li>Quick capture in under 2 minutes</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <h3>Weekly/Monthly Reviews</h3>
+                    <p>Guided reflection sessions tailored to your journey.</p>
+                    <ul class="feature-list">
+                        <li>4-6 tailored questions per review</li>
+                        <li>AI-powered pre-filled drafts from your logs</li>
+                        <li>Life score trends across all pillars</li>
+                        <li>Progress visualization over time</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <h3>Dashboard</h3>
+                    <p>Your personal growth command center.</p>
+                    <ul class="feature-list">
+                        <li>8 Pillar Scores (0-100) at a glance</li>
+                        <li>Quick stats and streak tracking</li>
+                        <li>Motivational prompts to keep you going</li>
+                        <li>Visual insights into your journey</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">4</div>
+                    <h3>End-of-Year Capsule</h3>
+                    <p>All 40 questions compiled into an interactive time capsule.</p>
+                    <ul class="feature-list">
+                        <li>Interactive e-book format with media</li>
+                        <li>Photos and voice clips integrated</li>
+                        <li>Optional future unlock dates</li>
+                        <li>Couple's mode for shared reflection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">
-      2.8k
-    </span>
-  
-</div>
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It <span>Works</span></h2>
+                <p>A seamless flow from daily moments to yearly insights.</p>
+            </div>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 11.828 11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3>Daily Flow</h3>
+                        <p>Each day, receive one thoughtful prompt from the 40-question framework. Spend 2-5 minutes capturing your thoughts through text, voice, photos, or videos. The app intelligently tags entries for later retrieval.</p>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3>Weekly Flow</h3>
+                        <p>Every week, engage with 4-6 targeted reflection questions. Our AI analyzes your daily logs to pre-fill drafts, making reflection effortless. Track your life scores across all 8 pillars.</p>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="flow-content">
+                        <h3>Yearly Flow</h3>
+                        <p>At year's end, all your reflections compile into a beautiful, interactive e-book. All 40 questions are answered with your authentic voice, enriched with photos and memories—a true capsule of your year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Privacy & Security Section -->
+    <section id="privacy">
+        <div class="container">
+            <div class="section-header">
+                <h2>Privacy & <span>Security</span></h2>
+                <p>Your reflections are deeply personal. We keep them completely private.</p>
+            </div>
+            <div class="privacy-features">
+                <div class="privacy-item">
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3>On-Device AI</h3>
+                    <p>Uses Apple's Foundation Models for NLP—no data sent to cloud servers.</p>
+                </div>
+                <div class="privacy-item">
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Local Storage</h3>
+                    <p>All data stored locally in SQLite via SwiftData on your device.</p>
+                </div>
+                <div class="privacy-item">
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                        </svg>
+                    </div>
+                    <h3>No Tracking</h3>
+                    <p>No ads, no tracking, no third-party analytics. Your data is yours.</p>
+                </div>
+                <div class="privacy-item">
+                    <div class="privacy-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h3>Optional iCloud</h3>
+                    <p>Choose to backup to your personal iCloud—under your control.</p>
+                </div>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-badge">
+                    <h4>~50MB</h4>
+                    <p>Lightweight with NLP included</p>
+                </div>
+                <div class="tech-badge">
+                    <h4>100% Private</h4>
+                    <p>Zero cloud dependencies</p>
+                </div>
+                <div class="tech-badge">
+                    <h4>Apple Native</h4>
+                    <p>Built with SwiftUI & SwiftData</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-20093083-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
-        
-
-
-
-
-
-
-
-        
-      </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Selflog</h3>
+            <p>Turning 40 questions into a year of intentional living.</p>
+            <div class="footer-divider"></div>
+            <p>&copy; 2024 Selflog. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></p>
+        </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
 </body>
 </html>

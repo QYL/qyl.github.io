@@ -42,6 +42,13 @@
             /* Legacy accent */
             --accent-teal: #4A8E8B;
             
+            /* Section background colors - refined palette */
+            --bg-warm-offwhite: #FAF8F5;
+            --bg-warm-sand: #F5EFE7;
+            --bg-soft-blue-gray: #F4F7FA;
+            --bg-light-sage: #F0F5F1;
+            --bg-trust-blue: #F3F7FB;
+            
             /* Gradients */
             --gradient-green-start: #7BC5A8;
             --gradient-green-end: #4A9D7E;
@@ -61,7 +68,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark-text);
-            background-color: var(--cream);
+            background-color: var(--bg-warm-offwhite);
         }
 
         .container {
@@ -87,7 +94,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
 
@@ -155,6 +175,7 @@
         /* Section Styles */
         section {
             padding: 80px 20px;
+            background-color: var(--bg-warm-offwhite);
         }
 
         section:nth-child(even) {
@@ -196,8 +217,9 @@
             border: 2px solid transparent;
         }
 
-        section:nth-child(even) .pillar-card {
-            background: var(--cream);
+        section:nth-child(3) .pillar-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
         }
 
         .pillar-card:hover {
@@ -326,8 +348,9 @@
             transition: all 0.3s ease;
         }
 
-        section:nth-child(even) .feature-card {
-            background: var(--cream);
+        section:nth-child(4) .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
@@ -402,8 +425,9 @@
             transition: all 0.3s ease;
         }
 
-        section:nth-child(even) .flow-step {
-            background: var(--cream);
+        section:nth-child(5) .flow-step {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
         }
 
         .flow-step:hover {
@@ -458,8 +482,9 @@
             transition: all 0.3s ease;
         }
 
-        section:nth-child(even) .privacy-item {
-            background: var(--cream);
+        section:nth-child(6) .privacy-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .privacy-item:hover {
@@ -498,16 +523,18 @@
         }
 
         .tech-badge {
-            background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-end));
+            background: linear-gradient(135deg, var(--gradient-blue-start), var(--gradient-blue-end));
             color: var(--white);
             padding: 25px;
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(90, 159, 204, 0.3);
         }
 
         .tech-badge:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(90, 159, 204, 0.4);
         }
 
         .tech-badge h4 {
@@ -521,24 +548,50 @@
         }
 
         /* Section background variations */
+        /* About Section - Warm off-white */
+        section:nth-child(2) {
+            background: var(--bg-warm-offwhite);
+        }
+        
+        /* 8 Life Pillars - Warm sand with subtle gradient */
         section:nth-child(3) {
-            background: linear-gradient(180deg, var(--cream) 0%, rgba(180, 167, 214, 0.05) 100%);
+            background: linear-gradient(180deg, var(--bg-warm-sand) 0%, rgba(255, 209, 102, 0.12) 100%);
+            position: relative;
         }
         
+        /* Key Features - Soft blue-gray with gradient */
         section:nth-child(4) {
-            background: linear-gradient(180deg, var(--white) 0%, rgba(110, 175, 220, 0.05) 100%);
+            background: linear-gradient(180deg, var(--bg-soft-blue-gray) 0%, rgba(110, 175, 220, 0.15) 100%);
         }
         
+        /* How It Works - Light sage green */
         section:nth-child(5) {
-            background: linear-gradient(180deg, var(--cream) 0%, rgba(255, 176, 136, 0.05) 100%);
+            background: linear-gradient(180deg, var(--bg-light-sage) 0%, rgba(123, 197, 168, 0.12) 100%);
+        }
+        
+        /* Privacy & Security - Trust blue */
+        section:nth-child(6) {
+            background: linear-gradient(180deg, var(--bg-trust-blue) 0%, rgba(90, 159, 204, 0.15) 100%);
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark-text);
+            background: linear-gradient(135deg, #2C3E50 0%, #34495e 100%);
             color: var(--white);
             padding: 60px 20px 30px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--light-green) 0%, var(--soft-blue) 50%, var(--lavender) 100%);
         }
 
         footer h3 {

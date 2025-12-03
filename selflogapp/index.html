@@ -17,47 +17,45 @@
         }
 
         :root {
-            /* Primary green - more vibrant and modern */
-            --primary-green: #10B981;
-            --light-green: #34D399;
-            --dark-green: #059669;
+            /* Primary indigo/purple - sophisticated and modern */
+            --primary-indigo: #6366F1;
+            --light-indigo: #818CF8;
+            --dark-indigo: #4F46E5;
             
-            /* Modern accent colors - vibrant and fresh */
-            --coral: #F43F5E;
-            --peach: #FB923C;
-            --lavender: #A78BFA;
-            --purple: #8B5CF6;
-            --amber: #FBBF24;
-            --gold: #F59E0B;
-            --soft-blue: #3B82F6;
-            --trust-blue: #0EA5E9;
+            /* Vibrant accent colors - warm and energetic */
+            --coral: #FF6B9D;
+            --peach: #FF8C42;
+            --sunset: #FF5E78;
+            --tangerine: #FFB347;
+            --cyan: #06B6D4;
+            --teal: #14B8A6;
+            --sky: #38BDF8;
+            --violet: #A855F7;
             
             /* Clean neutral colors */
             --cream: #FAFAFA;
             --warm-gray: #E5E7EB;
-            --dark-text: #1F2937;
-            --light-text: #6B7280;
+            --dark-text: #1E293B;
+            --light-text: #64748B;
             --white: #FFFFFF;
             
-            /* Legacy accent */
-            --accent-teal: #14B8A6;
-            
-            /* Modern section backgrounds - clean and bright */
+            /* Modern section backgrounds - fresh and clean */
             --bg-pure-white: #FFFFFF;
-            --bg-light-mint: #F0FDF4;
-            --bg-light-blue: #EFF6FF;
-            --bg-light-purple: #F5F3FF;
+            --bg-light-indigo: #EEF2FF;
+            --bg-light-cyan: #ECFEFF;
+            --bg-light-violet: #FAF5FF;
+            --bg-light-peach: #FFF7ED;
             --bg-light-rose: #FFF1F2;
             
-            /* Modern gradients - vibrant and clean */
-            --gradient-green-start: #34D399;
-            --gradient-green-end: #10B981;
-            --gradient-coral-start: #FB923C;
-            --gradient-coral-end: #F43F5E;
-            --gradient-purple-start: #A78BFA;
-            --gradient-purple-end: #8B5CF6;
-            --gradient-blue-start: #3B82F6;
-            --gradient-blue-end: #0EA5E9;
+            /* Modern gradients - sophisticated and vibrant */
+            --gradient-indigo-start: #818CF8;
+            --gradient-indigo-end: #6366F1;
+            --gradient-sunset-start: #FF8C42;
+            --gradient-sunset-end: #FF5E78;
+            --gradient-cyan-start: #38BDF8;
+            --gradient-cyan-end: #06B6D4;
+            --gradient-violet-start: #C084FC;
+            --gradient-violet-end: #A855F7;
         }
 
         html {
@@ -79,7 +77,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--gradient-green-start) 0%, var(--gradient-green-end) 100%);
+            background: linear-gradient(135deg, var(--gradient-indigo-start) 0%, var(--gradient-indigo-end) 100%);
             color: var(--white);
             padding: 120px 20px 100px;
             text-align: center;
@@ -94,9 +92,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 60% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.25) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,140,66,0.2) 0%, transparent 40%),
+                        radial-gradient(circle at 60% 80%, rgba(168,85,247,0.15) 0%, transparent 50%);
             pointer-events: none;
         }
         
@@ -107,7 +105,7 @@
             right: -10%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -147,7 +145,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gradient-coral-start) 0%, var(--gradient-coral-end) 100%);
+            background: linear-gradient(135deg, var(--gradient-sunset-start) 0%, var(--gradient-sunset-end) 100%);
             color: var(--white);
             padding: 16px 40px;
             border-radius: 30px;
@@ -155,13 +153,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 94, 120, 0.35);
             animation: fadeInUp 0.8s ease 0.4s backwards;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 94, 120, 0.45);
         }
 
         .cta-button svg {
@@ -190,7 +188,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--primary-green);
+            color: var(--primary-indigo);
             margin-bottom: 15px;
         }
 
@@ -220,95 +218,95 @@
 
         section:nth-child(3) .pillar-card {
             background: var(--white);
-            border: 1px solid rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.12);
         }
 
         .pillar-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
-            border-color: var(--light-green);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15), 0 4px 8px rgba(99, 102, 241, 0.08);
+            border-color: var(--light-indigo);
         }
         }
         
         /* Individual pillar card colors */
         .pillar-card:nth-child(1) {
-            border-color: var(--amber);
+            border-color: var(--tangerine);
         }
         .pillar-card:nth-child(1):hover {
-            border-color: var(--gold);
+            border-color: var(--peach);
         }
         .pillar-card:nth-child(1) .pillar-icon svg {
-            color: var(--amber);
+            color: var(--tangerine);
         }
         
         .pillar-card:nth-child(2) {
             border-color: var(--coral);
         }
         .pillar-card:nth-child(2):hover {
-            border-color: var(--peach);
+            border-color: var(--sunset);
         }
         .pillar-card:nth-child(2) .pillar-icon svg {
             color: var(--coral);
         }
         
         .pillar-card:nth-child(3) {
-            border-color: var(--lavender);
+            border-color: var(--violet);
         }
         .pillar-card:nth-child(3):hover {
-            border-color: var(--purple);
+            border-color: var(--light-indigo);
         }
         .pillar-card:nth-child(3) .pillar-icon svg {
-            color: var(--lavender);
+            color: var(--violet);
         }
         
         .pillar-card:nth-child(4) {
-            border-color: var(--peach);
+            border-color: var(--sunset);
         }
         .pillar-card:nth-child(4):hover {
             border-color: var(--coral);
         }
         .pillar-card:nth-child(4) .pillar-icon svg {
-            color: var(--peach);
+            color: var(--sunset);
         }
         
         .pillar-card:nth-child(5) {
-            border-color: var(--soft-blue);
+            border-color: var(--cyan);
         }
         .pillar-card:nth-child(5):hover {
-            border-color: var(--trust-blue);
+            border-color: var(--sky);
         }
         .pillar-card:nth-child(5) .pillar-icon svg {
-            color: var(--soft-blue);
+            color: var(--cyan);
         }
         
         .pillar-card:nth-child(6) {
-            border-color: var(--gold);
+            border-color: var(--peach);
         }
         .pillar-card:nth-child(6):hover {
-            border-color: var(--amber);
+            border-color: var(--tangerine);
         }
         .pillar-card:nth-child(6) .pillar-icon svg {
-            color: var(--gold);
+            color: var(--peach);
         }
         
         .pillar-card:nth-child(7) {
-            border-color: var(--purple);
+            border-color: var(--teal);
         }
         .pillar-card:nth-child(7):hover {
-            border-color: var(--lavender);
+            border-color: var(--cyan);
         }
         .pillar-card:nth-child(7) .pillar-icon svg {
-            color: var(--purple);
+            color: var(--teal);
         }
         
         .pillar-card:nth-child(8) {
-            border-color: var(--primary-green);
+            border-color: var(--primary-indigo);
         }
         .pillar-card:nth-child(8):hover {
-            border-color: var(--light-green);
+            border-color: var(--light-indigo);
         }
         .pillar-card:nth-child(8) .pillar-icon svg {
-            color: var(--primary-green);
+            color: var(--primary-indigo);
         }
 
         .pillar-icon {
@@ -324,7 +322,7 @@
 
         .pillar-card h3 {
             font-size: 1.3rem;
-            color: var(--primary-green);
+            color: var(--primary-indigo);
             margin-bottom: 10px;
         }
 
@@ -353,19 +351,19 @@
 
         section:nth-child(4) .feature-card {
             background: var(--white);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.12);
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.12), 0 6px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 35px rgba(6, 182, 212, 0.15), 0 6px 10px rgba(6, 182, 212, 0.08);
         }
 
         .feature-number {
             display: inline-block;
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-end));
+            background: linear-gradient(135deg, var(--gradient-cyan-start), var(--gradient-cyan-end));
             color: var(--white);
             border-radius: 50%;
             text-align: center;
@@ -377,7 +375,7 @@
 
         .feature-card h3 {
             font-size: 1.5rem;
-            color: var(--primary-green);
+            color: var(--cyan);
             margin-bottom: 15px;
         }
 
@@ -402,7 +400,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent-teal);
+            color: var(--cyan);
             font-weight: 700;
         }
 
@@ -431,12 +429,12 @@
 
         section:nth-child(5) .flow-step {
             background: var(--white);
-            border: 1px solid rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.12);
         }
 
         .flow-step:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 35px rgba(0,0,0,0.1), 0 5px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 35px rgba(168, 85, 247, 0.15), 0 5px 12px rgba(168, 85, 247, 0.08);
         }
 
         .flow-icon {
@@ -454,7 +452,7 @@
 
         .flow-content h3 {
             font-size: 1.8rem;
-            color: var(--primary-green);
+            color: var(--violet);
             margin-bottom: 15px;
         }
 
@@ -466,7 +464,7 @@
         .flow-arrow {
             text-align: center;
             font-size: 2.5rem;
-            color: var(--light-green);
+            color: var(--violet);
         }
 
         /* Privacy Section */
@@ -489,12 +487,12 @@
 
         section:nth-child(6) .privacy-item {
             background: var(--white);
-            border: 1px solid rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.12);
         }
 
         .privacy-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15), 0 4px 8px rgba(99, 102, 241, 0.08);
         }
 
         .privacy-icon {
@@ -510,7 +508,7 @@
 
         .privacy-item h3 {
             font-size: 1.2rem;
-            color: var(--primary-green);
+            color: var(--primary-indigo);
             margin-bottom: 10px;
         }
 
@@ -528,19 +526,19 @@
         }
 
         .tech-badge {
-            background: linear-gradient(135deg, var(--gradient-blue-start), var(--gradient-blue-end));
+            background: linear-gradient(135deg, var(--gradient-violet-start), var(--gradient-violet-end));
             color: var(--white);
             padding: 28px;
             border-radius: 16px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .tech-badge:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
         }
 
         .tech-badge h4 {
@@ -554,36 +552,36 @@
             opacity: 0.95;
         }
 
-        /* Section background variations - Clean and modern */
+        /* Section background variations - Modern and sophisticated */
         /* About Section - Pure white */
         section:nth-child(2) {
             background: var(--white);
         }
         
-        /* 8 Life Pillars - Light mint with subtle gradient */
+        /* 8 Life Pillars - Light indigo with subtle gradient */
         section:nth-child(3) {
-            background: linear-gradient(180deg, var(--bg-light-mint) 0%, rgba(16, 185, 129, 0.08) 100%);
+            background: linear-gradient(180deg, var(--bg-light-indigo) 0%, rgba(99, 102, 241, 0.06) 100%);
             position: relative;
         }
         
-        /* Key Features - Light blue with gradient */
+        /* Key Features - Light cyan with gradient */
         section:nth-child(4) {
-            background: linear-gradient(180deg, var(--bg-light-blue) 0%, rgba(59, 130, 246, 0.08) 100%);
+            background: linear-gradient(180deg, var(--bg-light-cyan) 0%, rgba(6, 182, 212, 0.06) 100%);
         }
         
-        /* How It Works - Light purple */
+        /* How It Works - Light violet */
         section:nth-child(5) {
-            background: linear-gradient(180deg, var(--bg-light-purple) 0%, rgba(139, 92, 246, 0.06) 100%);
+            background: linear-gradient(180deg, var(--bg-light-violet) 0%, rgba(168, 85, 247, 0.05) 100%);
         }
         
-        /* Privacy & Security - Light blue */
+        /* Privacy & Security - Light indigo */
         section:nth-child(6) {
-            background: linear-gradient(180deg, var(--bg-light-blue) 0%, rgba(14, 165, 233, 0.08) 100%);
+            background: linear-gradient(180deg, var(--bg-light-indigo) 0%, rgba(99, 102, 241, 0.06) 100%);
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
             color: var(--white);
             padding: 60px 20px 30px;
             text-align: center;
@@ -599,11 +597,12 @@
             right: 0;
             height: 4px;
             background: linear-gradient(90deg, 
-                var(--primary-green) 0%, 
-                var(--soft-blue) 25%, 
-                var(--purple) 50%, 
-                var(--coral) 75%, 
-                var(--amber) 100%);
+                var(--primary-indigo) 0%, 
+                var(--violet) 20%,
+                var(--cyan) 40%, 
+                var(--sunset) 60%, 
+                var(--coral) 80%,
+                var(--tangerine) 100%);
         }
 
         footer h3 {
@@ -618,7 +617,7 @@
         }
 
         footer a {
-            color: var(--light-green);
+            color: var(--light-indigo);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -630,7 +629,7 @@
         .footer-divider {
             width: 60px;
             height: 3px;
-            background: var(--light-green);
+            background: var(--light-indigo);
             margin: 30px auto;
         }
 

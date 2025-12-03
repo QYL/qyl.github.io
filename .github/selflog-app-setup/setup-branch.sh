@@ -16,12 +16,16 @@ git checkout --orphan selflog-app
 # Remove all files from staging
 git rm -rf --cached .
 
-# Clean the working directory (except .git)
-find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} +
+# Clean the working directory (except .git and .github)
+# We need .github to access the setup files
+find . -maxdepth 1 ! -name '.git' ! -name '.github' ! -name '.' ! -name '..' -exec rm -rf {} +
 
 # Copy the setup files to root
 cp .github/selflog-app-setup/index.html ./index.html
 cp .github/selflog-app-setup/CNAME ./CNAME
+
+# Clean up .github directory after copying
+rm -rf .github
 
 # Stage the files
 git add index.html CNAME

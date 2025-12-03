@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selflog - Turning 40 questions into a year of intentional living. Transform your daily reflections into meaningful personal growth with our privacy-first iOS app.">
+    <meta name="keywords" content="iOS, journaling, reflection, personal growth, privacy, year in review, intentional living">
+    <meta property="og:title" content="Selflog - Intentional Living Through Reflection">
+    <meta property="og:description" content="Turn 40 year-in-review questions into daily intentional living with 8 Life Pillars, AI-powered insights, and complete privacy.">
+    <meta property="og:type" content="website">
+    <title>Selflog - Turning 40 questions into a year of intentional living</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #6B9080;
+            --light-green: #A4C3B2;
+            --cream: #F6F4EF;
+            --warm-gray: #CCB9A6;
+            --dark-text: #2C3E50;
+            --light-text: #5A6C7D;
+            --white: #FFFFFF;
+            --accent-teal: #4A8E8B;
+            --gradient-start: #8BA888;
+            --gradient-end: #6B9080;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--cream);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-green);
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .cta-button::before {
+            content: "📱 ";
+            font-size: 1.2rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        section:nth-child(even) .pillar-card {
+            background: var(--cream);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: var(--light-green);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .pillar-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        section:nth-child(even) .feature-card {
+            background: var(--cream);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            color: var(--light-text);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: 700;
+        }
+
+        /* How It Works Flow */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        section:nth-child(even) .flow-step {
+            background: var(--cream);
+        }
+
+        .flow-step:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .flow-icon {
+            font-size: 4rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .flow-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .flow-content p {
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--light-green);
+        }
+
+        /* Privacy Section */
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .privacy-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        section:nth-child(even) .privacy-item {
+            background: var(--cream);
+        }
+
+        .privacy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .privacy-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .privacy-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .privacy-item p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Tech Highlights */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .tech-badge h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .tech-badge p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--white);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: var(--light-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--light-green);
+            margin: 30px auto;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .flow-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 20px 50px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-emoji {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Smooth scroll offset for navigation */
+        section {
+            scroll-margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-emoji">🌱</span>
+            <h1>Selflog</h1>
+            <p class="hero-tagline">Turning 40 questions into a year of intentional living.</p>
+            <a href="#" class="cta-button">Download on App Store</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Transform Your Year, One Day at a Time</h2>
+                <p>Selflog is a transformative iOS app that merges the power of a 40-question year-in-review framework with daily intentional living, memory preservation, and personal growth. Rather than treating reflection as a December ritual, Selflog weaves the 40 questions into daily life through 8 Life Pillars.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 Life Pillars Section -->
+    <section id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <h2>The 8 Life Pillars</h2>
+                <p>Every aspect of your life, organized into meaningful categories for holistic growth</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <span class="pillar-icon">📈</span>
+                    <h3>Growth & Achievement</h3>
+                    <p>Track your learning journey, celebrate wins, and develop new skills that propel you forward.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🤝</span>
+                    <h3>Relationships & Connections</h3>
+                    <p>Nurture meaningful bonds, celebrate special people, and strengthen your connections.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">✨</span>
+                    <h3>Joy & Discovery</h3>
+                    <p>Capture moments of excitement, explore your favorites, and cultivate curiosity.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">💪</span>
+                    <h3>Health & Resilience</h3>
+                    <p>Build physical fitness, overcome challenges, and strengthen mental fortitude.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🌍</span>
+                    <h3>Adventure & Exploration</h3>
+                    <p>Document travels, embrace new experiences, and expand your horizons.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">💰</span>
+                    <h3>Wealth & Habits</h3>
+                    <p>Manage finances wisely, develop positive habits, and maintain daily disciplines.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🪞</span>
+                    <h3>Reflection & Regret</h3>
+                    <p>Learn from experiences, acknowledge wishes, and identify growth opportunities.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🌱</span>
+                    <h3>Legacy & Sanity</h3>
+                    <p>Define your values, discover meaning, and maintain what keeps you centered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features</h2>
+                <p>Everything you need for intentional living and meaningful reflection</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3>Daily Micro-Logs</h3>
+                    <p>One rotating prompt per day from 40 carefully crafted questions</p>
+                    <ul class="feature-list">
+                        <li>Multi-modal input: text, voice, photos, videos</li>
+                        <li>AI auto-tagging for easy organization</li>
+                        <li>Apple Watch support for on-the-go logging</li>
+                        <li>Quick capture in under 2 minutes</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <h3>Weekly/Monthly Mini-Reviews</h3>
+                    <p>Guided reflection sessions tailored to your journey</p>
+                    <ul class="feature-list">
+                        <li>4-6 tailored questions per review</li>
+                        <li>AI-powered pre-filled drafts from your logs</li>
+                        <li>Life score trends across all pillars</li>
+                        <li>Progress visualization over time</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <h3>Dashboard</h3>
+                    <p>Your personal growth command center</p>
+                    <ul class="feature-list">
+                        <li>8 Pillar Scores (0-100) at a glance</li>
+                        <li>Quick stats and streak tracking</li>
+                        <li>Motivational prompts to keep you going</li>
+                        <li>Visual insights into your journey</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">4</div>
+                    <h3>End-of-Year Capsule</h3>
+                    <p>All 40 questions compiled into an interactive time capsule</p>
+                    <ul class="feature-list">
+                        <li>Interactive e-book format with media</li>
+                        <li>Photos and voice clips integrated</li>
+                        <li>Optional future unlock dates</li>
+                        <li>Couple's mode for shared reflection</li>
+                        <li>Export as PDF or ebook</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>A seamless flow from daily moments to yearly insights</p>
+            </div>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="flow-icon">📝</div>
+                    <div class="flow-content">
+                        <h3>Daily Flow</h3>
+                        <p>Each day, receive one thoughtful prompt from the 40-question framework. Spend 2-5 minutes capturing your thoughts through text, voice, photos, or videos. The app intelligently organizes your entries across the 8 Life Pillars, building a rich tapestry of your daily experiences.</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-icon">📊</div>
+                    <div class="flow-content">
+                        <h3>Weekly Flow</h3>
+                        <p>Every week, engage with 4-6 targeted reflection questions. Our AI analyzes your daily logs to pre-fill drafts, making reflection effortless. Track your life scores across all pillars and spot trends in your personal growth journey.</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-step">
+                    <div class="flow-icon">📚</div>
+                    <div class="flow-content">
+                        <h3>Yearly Flow</h3>
+                        <p>At year's end, all your reflections compile into a beautiful, interactive e-book. All 40 questions are answered with your authentic voice, enriched with photos and memories. Set unlock dates for future reflection, share with a partner, or export for safekeeping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy & Security Section -->
+    <section id="privacy">
+        <div class="container">
+            <div class="section-header">
+                <h2>Privacy & Security</h2>
+                <p>Your reflections are deeply personal. We keep them completely private.</p>
+            </div>
+            <div class="privacy-features">
+                <div class="privacy-item">
+                    <span class="privacy-icon">🔒</span>
+                    <h3>On-Device AI</h3>
+                    <p>Uses Apple's Foundation Models for NLP—no data sent to cloud servers</p>
+                </div>
+                <div class="privacy-item">
+                    <span class="privacy-icon">💾</span>
+                    <h3>Local Storage</h3>
+                    <p>All data stored locally in SQLite via SwiftData on your device</p>
+                </div>
+                <div class="privacy-item">
+                    <span class="privacy-icon">🚫</span>
+                    <h3>No Tracking</h3>
+                    <p>No ads, no tracking, no third-party analytics. Your data is yours.</p>
+                </div>
+                <div class="privacy-item">
+                    <span class="privacy-icon">☁️</span>
+                    <h3>Optional iCloud</h3>
+                    <p>Choose to backup to your personal iCloud—under your control</p>
+                </div>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-badge">
+                    <h4>~50MB</h4>
+                    <p>Lightweight with NLP included</p>
+                </div>
+                <div class="tech-badge">
+                    <h4>100% Private</h4>
+                    <p>Zero cloud dependencies</p>
+                </div>
+                <div class="tech-badge">
+                    <h4>Apple Native</h4>
+                    <p>Built with SwiftUI & SwiftData</p>
+                </div>
+                <div class="tech-badge">
+                    <h4>Offline First</h4>
+                    <p>Works without internet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Start Your Journey Today</h3>
+            <p>Transform your reflections into a year of intentional living.</p>
+            <div class="footer-divider"></div>
+            <p>Have questions or feedback?</p>
+            <p><a href="mailto:support@selflog.app">support@selflog.app</a></p>
+            <div class="copyright">
+                <p>&copy; 2024 Selflog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.pillar-card, .feature-card, .flow-step, .privacy-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

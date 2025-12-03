@@ -17,47 +17,47 @@
         }
 
         :root {
-            /* Primary green - more vibrant */
-            --primary-green: #4A9D7E;
-            --light-green: #7BC5A8;
-            --dark-green: #2E7D63;
+            /* Primary green - more vibrant and modern */
+            --primary-green: #10B981;
+            --light-green: #34D399;
+            --dark-green: #059669;
             
-            /* New accent colors */
-            --coral: #FF6B6B;
-            --peach: #FFB088;
-            --lavender: #B4A7D6;
-            --purple: #9381C2;
-            --amber: #FFD166;
-            --gold: #F0AD4E;
-            --soft-blue: #6EAFDC;
-            --trust-blue: #5A9FCC;
+            /* Modern accent colors - vibrant and fresh */
+            --coral: #F43F5E;
+            --peach: #FB923C;
+            --lavender: #A78BFA;
+            --purple: #8B5CF6;
+            --amber: #FBBF24;
+            --gold: #F59E0B;
+            --soft-blue: #3B82F6;
+            --trust-blue: #0EA5E9;
             
-            /* Neutral colors */
-            --cream: #F6F4EF;
-            --warm-gray: #CCB9A6;
-            --dark-text: #2C3E50;
-            --light-text: #5A6C7D;
+            /* Clean neutral colors */
+            --cream: #FAFAFA;
+            --warm-gray: #E5E7EB;
+            --dark-text: #1F2937;
+            --light-text: #6B7280;
             --white: #FFFFFF;
             
             /* Legacy accent */
-            --accent-teal: #4A8E8B;
+            --accent-teal: #14B8A6;
             
-            /* Section background colors - refined palette */
-            --bg-warm-offwhite: #FAF8F5;
-            --bg-warm-sand: #F5EFE7;
-            --bg-soft-blue-gray: #F4F7FA;
-            --bg-light-sage: #F0F5F1;
-            --bg-trust-blue: #F3F7FB;
+            /* Modern section backgrounds - clean and bright */
+            --bg-pure-white: #FFFFFF;
+            --bg-light-mint: #F0FDF4;
+            --bg-light-blue: #EFF6FF;
+            --bg-light-purple: #F5F3FF;
+            --bg-light-rose: #FFF1F2;
             
-            /* Gradients */
-            --gradient-green-start: #7BC5A8;
-            --gradient-green-end: #4A9D7E;
-            --gradient-coral-start: #FFB088;
-            --gradient-coral-end: #FF6B6B;
-            --gradient-purple-start: #B4A7D6;
-            --gradient-purple-end: #9381C2;
-            --gradient-blue-start: #6EAFDC;
-            --gradient-blue-end: #5A9FCC;
+            /* Modern gradients - vibrant and clean */
+            --gradient-green-start: #34D399;
+            --gradient-green-end: #10B981;
+            --gradient-coral-start: #FB923C;
+            --gradient-coral-end: #F43F5E;
+            --gradient-purple-start: #A78BFA;
+            --gradient-purple-end: #8B5CF6;
+            --gradient-blue-start: #3B82F6;
+            --gradient-blue-end: #0EA5E9;
         }
 
         html {
@@ -68,7 +68,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark-text);
-            background-color: var(--bg-warm-offwhite);
+            background-color: var(--white);
         }
 
         .container {
@@ -81,7 +81,7 @@
         .hero {
             background: linear-gradient(135deg, var(--gradient-green-start) 0%, var(--gradient-green-end) 100%);
             color: var(--white);
-            padding: 100px 20px 80px;
+            padding: 120px 20px 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -94,8 +94,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.1) 0%, transparent 40%);
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 60% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
             pointer-events: none;
         }
         
@@ -104,9 +105,9 @@
             position: absolute;
             top: -50%;
             right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -175,11 +176,11 @@
         /* Section Styles */
         section {
             padding: 80px 20px;
-            background-color: var(--bg-warm-offwhite);
+            background-color: var(--white);
         }
 
         section:nth-child(even) {
-            background-color: var(--white);
+            background-color: var(--cream);
         }
 
         .section-header {
@@ -211,22 +212,22 @@
         .pillar-card {
             background: var(--white);
             padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         section:nth-child(3) .pillar-card {
-            background: rgba(255, 255, 255, 0.85);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            background: var(--white);
+            border: 1px solid rgba(16, 185, 129, 0.1);
         }
 
         .pillar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
             border-color: var(--light-green);
+        }
         }
         
         /* Individual pillar card colors */
@@ -344,20 +345,20 @@
         .feature-card {
             background: var(--white);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         section:nth-child(4) .feature-card {
-            background: rgba(255, 255, 255, 0.9);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            background: var(--white);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12), 0 6px 10px rgba(0,0,0,0.08);
         }
 
         .feature-number {
@@ -422,20 +423,20 @@
             gap: 30px;
             background: var(--white);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         section:nth-child(5) .flow-step {
-            background: rgba(255, 255, 255, 0.85);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            background: var(--white);
+            border: 1px solid rgba(167, 139, 250, 0.1);
         }
 
         .flow-step:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1), 0 5px 12px rgba(0,0,0,0.06);
         }
 
         .flow-icon {
@@ -480,20 +481,20 @@
             text-align: center;
             padding: 30px;
             background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         section:nth-child(6) .privacy-item {
-            background: rgba(255, 255, 255, 0.9);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            background: var(--white);
+            border: 1px solid rgba(14, 165, 233, 0.1);
         }
 
         .privacy-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
         }
 
         .privacy-icon {
@@ -529,58 +530,60 @@
         .tech-badge {
             background: linear-gradient(135deg, var(--gradient-blue-start), var(--gradient-blue-end));
             color: var(--white);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 28px;
+            border-radius: 16px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(90, 159, 204, 0.3);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .tech-badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(90, 159, 204, 0.4);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
         }
 
         .tech-badge h4 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .tech-badge p {
             font-size: 0.9rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* Section background variations */
-        /* About Section - Warm off-white */
+        /* Section background variations - Clean and modern */
+        /* About Section - Pure white */
         section:nth-child(2) {
-            background: var(--bg-warm-offwhite);
+            background: var(--white);
         }
         
-        /* 8 Life Pillars - Warm sand with subtle gradient */
+        /* 8 Life Pillars - Light mint with subtle gradient */
         section:nth-child(3) {
-            background: linear-gradient(180deg, var(--bg-warm-sand) 0%, rgba(255, 209, 102, 0.12) 100%);
+            background: linear-gradient(180deg, var(--bg-light-mint) 0%, rgba(16, 185, 129, 0.08) 100%);
             position: relative;
         }
         
-        /* Key Features - Soft blue-gray with gradient */
+        /* Key Features - Light blue with gradient */
         section:nth-child(4) {
-            background: linear-gradient(180deg, var(--bg-soft-blue-gray) 0%, rgba(110, 175, 220, 0.15) 100%);
+            background: linear-gradient(180deg, var(--bg-light-blue) 0%, rgba(59, 130, 246, 0.08) 100%);
         }
         
-        /* How It Works - Light sage green */
+        /* How It Works - Light purple */
         section:nth-child(5) {
-            background: linear-gradient(180deg, var(--bg-light-sage) 0%, rgba(123, 197, 168, 0.12) 100%);
+            background: linear-gradient(180deg, var(--bg-light-purple) 0%, rgba(139, 92, 246, 0.06) 100%);
         }
         
-        /* Privacy & Security - Trust blue */
+        /* Privacy & Security - Light blue */
         section:nth-child(6) {
-            background: linear-gradient(180deg, var(--bg-trust-blue) 0%, rgba(90, 159, 204, 0.15) 100%);
+            background: linear-gradient(180deg, var(--bg-light-blue) 0%, rgba(14, 165, 233, 0.08) 100%);
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #2C3E50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
             color: var(--white);
             padding: 60px 20px 30px;
             text-align: center;
@@ -594,8 +597,13 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--light-green) 0%, var(--soft-blue) 50%, var(--lavender) 100%);
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--primary-green) 0%, 
+                var(--soft-blue) 25%, 
+                var(--purple) 50%, 
+                var(--coral) 75%, 
+                var(--amber) 100%);
         }
 
         footer h3 {

@@ -17,7 +17,8 @@ git checkout --orphan selflog-app
 git rm -rf --cached .
 
 # Clean the working directory (except .git and .github)
-# We need .github to access the setup files
+# We preserve .github to access the setup files, then remove it after copying
+# This approach is safer than hardcoding directory names
 find . -maxdepth 1 ! -name '.git' ! -name '.github' ! -name '.' ! -name '..' -exec rm -rf {} +
 
 # Copy the setup files to root
@@ -44,4 +45,4 @@ echo "2. Configure the source to deploy from the 'selflog-app' branch"
 echo "3. The custom domain 'selflog.app' should be automatically detected from the CNAME file"
 echo ""
 echo "Switching back to $CURRENT_BRANCH..."
-git checkout "$CURRENT_BRANCH"
+git checkout "$CURRENT_BRANCH" || echo "Warning: Could not switch back to $CURRENT_BRANCH"

@@ -41,6 +41,8 @@ git rm -rf --cached .
 ### 3. Remove all files from working directory
 
 ```bash
+# Note: Adjust this list if the repository structure has changed
+# You can also use: find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} +
 rm -rf 2017 404.html about app archives categories creation css dialogueapp images js lib selflogapp tags index.html
 ```
 

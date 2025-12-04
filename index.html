@@ -8,7 +8,12 @@
     <meta property="og:title" content="Selflog - Intentional Living Through Reflection">
     <meta property="og:description" content="Turn 40 year-in-review questions into daily intentional living with 8 Life Pillars, AI-powered insights, and complete privacy.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://selflog.app">
+    <meta property="og:image" content="https://selflog.app/og-image.png">
     <title>Selflog - Turning 40 questions into a year of intentional living</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,6 +82,73 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-indigo);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-indigo);
+        }
+
+        .nav-cta {
+            background: var(--primary-indigo);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -633,6 +705,9 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide on mobile - can add hamburger menu later */
+            }
             .hero h1 { font-size: 2.5rem; }
             .hero-tagline { font-size: 1.125rem; }
             .section-header h2 { font-size: 2rem; }
@@ -644,6 +719,26 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+                Selflog
+            </a>
+            <div class="nav-links">
+                <a href="#pillars">8 Pillars</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#privacy">Privacy</a>
+                <a href="https://github.com/QYL/qyl.github.io" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://apps.apple.com/app/selflog" class="nav-cta" target="_blank" rel="noopener">Download</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="blob blob-1"></div>
@@ -927,7 +1022,12 @@
             <p>Turning 40 questions into a year of intentional living.</p>
             <div class="footer-divider"></div>
             <p>&copy; 2024 Selflog. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></p>
+            <p>
+                <a href="https://github.com/QYL/qyl.github.io" target="_blank" rel="noopener">GitHub</a> • 
+                <a href="https://apps.apple.com/app/selflog" target="_blank" rel="noopener">App Store</a> • 
+                <a href="app/en/privacy/">Privacy Policy</a> • 
+                <a href="app/en/intro/">Introduction</a>
+            </p>
         </div>
     </footer>
 </body>
